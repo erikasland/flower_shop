@@ -1,0 +1,91 @@
+*{
+  border: 0;
+  margin: 0;
+}
+
+html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header{
+  padding: 1.3em 1.3em;
+  display: inline-block;
+}
+
+#title{
+  color: white;
+  font-family: dynalight;
+  font-size: 10em;
+}
+
+#subtitle{
+  color: white;
+  font-family: dynalight;
+  font-size: 2em;
+  margin-left: 3.5em;
+  position: relative;
+  top: -1em;
+}
+
+#right-wrap{
+  width: 41.1em;
+  float: right;
+  margin: 30em 5em 0 0;
+}
+
+#background{
+  width: 39.5em;
+  height: 23em;
+  background-color: black;
+  opacity: .4;
+  border-radius: .5em;
+  border: white solid 1px;
+}
+
+section{
+  position: relative;
+  left: .5em;
+  bottom: 22em;
+  width: 38.5em;
+  height: 23em;
+}
+
+h3{
+  display: inline-block;
+  font-family: dynalight;
+  color: white;
+  font-size: 2em;
+}
+
+#login{
+  margin: 0 7.5em 0 1em;
+}
+
+form{
+  width: 16.9em;
+  display: inline-block; vertical-align: top;
+  margin: 1.5em 0 0 2em;
+}
+
+input{
+  display: block;
+  height: 1.5em;
+  font-size: 1em;
+  margin-bottom: .5em;
+}
+
+label{
+  color: white
+}
+
+#line{
+  display: inline-block; vertical-align: top;
+  margin: 3em 0;
+  width: 1px;
+  height: 12.5em;
+  border-right: dashed white .1em
+}
