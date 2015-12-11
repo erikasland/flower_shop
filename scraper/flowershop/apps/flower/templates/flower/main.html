@@ -18,7 +18,7 @@
                 {% for i in flower  %}
                 <div class='flower-wrap'>
                     <h1>{{i.name}}</h1>
-                    <img src='http://{{i.link}}' class='flower-pic'>
+                    <img src='{{i.link}}' class='flower-pic'>
                     <form action='cart' method='post'>
                         {%csrf_token%}
                         <input type='hidden' name = 'flower_id' value = '{{i.id}}'>

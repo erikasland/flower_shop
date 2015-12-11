@@ -8,31 +8,36 @@ class Command(BaseCommand):
     help = 'Takes information from webpage'
 
     def handle(self, *args, **options):
-        r = requests.get("http://www.all-my-favourite-flower-names.com/list-of-flower-names.html")
+        self.insert_into_db()
+
+    def scrape_flowers(self):  #scrapes flowers from website
+        r = requests.get("http://www.pbase.com/hjsteed/just_flowers_pz&page=all")
+        data = r.text
+        soup = BeautifulSoup(data, 'html.parser')
+        flowers = []
+
+        for name in soup.find_all('td', {'class': "thumbnail"}):
+            flowers.append(name.b.string.strip(':').encode('ascii', 'ignore').decode('ascii'))
+        return flowers
+
+    def scrape_imgs(self): #scrapes img urls from website
+        r = requests.get("http://www.pbase.com/hjsteed/just_flowers_pz&page=all")
         data = r.text
         soup = BeautifulSoup(data, 'html.parser')
         links = []
-        flowers = []
-        for flower in soup.find_all('b'):  #Finds flower names and appends them to the flowers list
-            flower = flower.string
-            if (flower != None and flower[0] == "A"):
-                flowers.append(flower.strip('.()'))
-            
-        for link in soup.find_all('img'):  #Finds 'src' in <img> tag and appends 'src' to the links list
-            links.append(link['src'].strip('https://'))
 
-        for stragler in soup.find_all('a'):  #Finds the only flower name that doesn't follow the pattern of the other names and inserts it into flowers list
-            floss = stragler.string
-            if floss != None and floss == "Ageratum houstonianum.":
-                flowers.insert(3, floss)
+        for link in soup.find_all('a', {'class': "thumbnail"}):
+            links.append(link.img['src'].encode('ascii', 'ignore').decode('ascii'))
+        return links
 
-        counter = 0
-        while counter < len(flowers):  #Creates flowers/links in the database
-            if len(Flower.objects.all()) == len(flowers):
-                break
-            else:
-                Flower.objects.create(name=flowers[counter], link=links[counter])
-                counter += 1
+    def insert_into_db(self): #inserts flowers and links into database 
+        flowers_list = self.scrape_flowers()
+        url_list = self.scrape_imgs()
+
+        count = 0
+        while count < len(flowers_list):
+            Flower.objects.get_or_create(name = flowers_list[count], link = url_list[count])
+            count+=1
 
 
-
+        
