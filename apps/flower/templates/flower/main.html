@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <link rel='stylesheet' type='text/css' href='{% static "flower/mainstyles.css" %}'>
+        <link href='https://fonts.googleapis.com/css?family=Dynalight' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.flower_form').submit(function(){
+                    $.post('/cart', $(this).serialize(), function(res){
+                        
+                    })
+                    return false
+                })
+            })
+        </script>
+        <title>Florian | elegance. perfection. passion.</title>
+    </head>
+    <body>
+        <header>
+            <h1 id='title'>Florian<h1>
+            <h6 id='subtitle'>elegance. perfection. passion.</h6>
+        </header>
+        <div id='right-wrap'>
+            <h3 class='welcome' id='name'>Welcome, {{request.user.username}}! | <a id='logout' href='logout'>Log Out</a></h3>
+            <a class='welcome' id='cart' href='showcart'>Cart</a>
+            <div id='background'></div>
+            <section>
+                {% for i in flowers %}
+                <div class='flower-wrap'>
+                    <h1>{{i}}</h1>
+                    <img src='{{i.link}}' class='flower-pic'>
+                    <form class='flower_form' method='post'>
+                        {%csrf_token%}
+                        <input type='hidden' name = 'flower_id' value = '{{i.id}}'>
+                        <input type='hidden' name = 'flower_name' value='{{i.name}}'>
+                        <input type='submit' value='Add'>
+                    </form>
+                </div>
+                {% endfor %}
+            </section>
+            <div class='step-links'>
+                    <span class='pagination'>
+                        {% if flowers.has_previous %}
+                            <a href='?page={{flowers.previous_page_number}}'>previous</a>
+                        {% endif %}
+
+                        <span class='current'>
+                            {{ flowers.number }} of {{ flowers.paginator.num_pages}}
+                        </span>
+
+                        {% if flowers.has_next %}
+                            <a href='?page={{ flowers.next_page_number }}'>next</a>
+                        {% endif %}
+                    </span>
+                </div>
+        </div>
+    </body>
+</html>
