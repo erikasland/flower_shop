@@ -27,6 +27,7 @@ class CartDetail(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(User, related_name='orders')
     order = models.CharField(max_length=10000, default=None)
+    shipped = models.BooleanField(default = False)
     def __str__(self):
         return self.user.username
 
