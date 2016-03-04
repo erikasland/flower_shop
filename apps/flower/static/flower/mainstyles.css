@@ -11,125 +11,278 @@ html {
   background-size: cover;
 }
 
-header{
-  padding: 1.3em 1.3em;
-  display: inline-block;
+@media screen and (min-width: 0){
+  header{
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    height: 8em;
+    padding: 1em 0;
+  }
+
+  #wrapper{
+    width: 19em;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  #title{
+    color: white;
+    font-family: dynalight;
+    font-size: 6em;
+    text-align: center;
+  }
+
+  #subtitle{
+    color: white;
+    font-family: dynalight;
+    font-size: 1.4em;
+    margin-left: 26%;
+    position: relative;
+    top: -1em;
+  }
+
+  #right-wrap{
+    width: 19.1em;
+    margin: 0 auto;
+    height: 122em;
+  }
+
+  .welcome, #logout{
+    color: white;
+    text-decoration: none;
+    font-family: dynalight;
+    display: inline-block;
+  }
+
+  .welcome{
+    width: 100%;
+    text-align: center;
+    display: inline-block;vertical-align: top;
+  }
+
+  #name{
+    font-size: 1.3em;
+    display: inline-block;vertical-align: top;
+  }
+
+  #logout{
+    font-size: 1em;
+    display: inline-block;vertical-align: top;
+  }
+
+  #cart{
+    font-size: 1em;
+    font-weight: bold;
+    width: 2em;
+    display: inline-block;vertical-align: top;
+  }
+
+  #cart:hover{
+    opacity: .3;
+  }
+
+  #logout:hover{
+    opacity: .3;
+  }
+
+  #background{
+    width: 19.1em;
+    height: 133em;
+    background-color: black;
+    opacity: .4;
+    border-radius: .5em;
+    position: absolute;
+    top: 1em;
+    z-index: -1;
+  }
+
+  section{
+    width: 89%;
+    margin: 0 auto;
+    height: 58em;
+  }
+
+  .flower-wrap{
+    display: inline-block;
+    width: 44%;
+    margin: 2.1% 2.1% 6% 2.1%;
+    height: 22%;
+    font-family: 'PT Sans Narrow';
+    font-style: italic;
+    text-align: center;
+    color: white;
+    font-size: .6em;
+  }
+
+  .flower-pic{
+    width: 100%;
+    height: 57%;
+    border-radius: .5em;
+  }
+
+  .flower-pic:hover{
+    opacity: .3;
+  }
+
+  input{
+    font-family: dynalight;
+    padding: .1em .8em;
+    border-radius: .8em;
+    font-size: 2.4em;
+    color: white;
+    border: white solid;
+    background-color: transparent;
+  }
+
+  form{
+    margin: .5em 0 1em 0;
+  }
+
+  .step-links{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    bottom: -58.5em;
+    margin-bottom: 3em;
+  }
+
+  .pagination, a{
+    color: white;
+    text-decoration: none;
+    font-family: dynalight;
+    font-size: 1.5em;
+  }
+
+  .current{
+    margin: 0 1em;
+  }
 }
 
-#title{
-  color: white;
-  font-family: dynalight;
-  font-size: 10em;
+@media screen and (min-width: 481px){
+
+  #wrapper{
+    width: 29em;
+    height: 100%;
+  }
+
+  #title{
+    font-size: 10em;
+  }
+
+  #subtitle{
+    font-size: 2.2em;
+  }
+
+  #right-wrap{
+    width: 29.1em;
+    height: 48.5em;
+  }
+
+  #name{
+    font-size: 1.5em;
+    margin-left: 1em;
+    text-align: left;
+  }
+
+  #background{
+    width: 29.1em;
+    height: 69em;
+  }
+
+  section{
+    width: 95%;
+    height: 47em;
+  }
+
+  .flower-wrap{
+    width: 19.9%;
+    margin: 2.1% 2.1% 1% 2.1%;
+    font-size: .5em;
+  }
+
+  .step-links{
+    position: relative;
+    bottom: -2em;
+  }
 }
 
-#subtitle{
-  color: white;
-  font-family: dynalight;
-  font-size: 2em;
-  margin-left: 3.5em;
-  position: relative;
-  top: -1em;
+@media screen and (min-width: 1024px){
+  
+  #wrapper{
+    width: 64em;
+    height: 100%;
+  }
+
+  #title{
+    font-size: 11em;
+    height: 1.2em;
+  }
+
+  #subtitle{
+    font-size: 2em;
+    margin-left: 45%
+  }
+
+  #right-wrap{
+    width: 63.1em;
+    height: 32.5em;
+  }
+
+  #name{
+    font-size: 2em;
+    margin-left: 2%;
+  }
+
+  #background{
+    width: 63.1em;
+    height: 46em;
+  }
+
+  section{
+    width: 100%;
+    height: 31em;
+  }
+
+  .flower-wrap{
+    width: 10.85%;
+    margin: 0 .6% .5% .6%;
+    font-size: .5em;
+    height: 36%;
+  }
+
+  .flower-pics{
+    height: 57%;
+  }
+
+  .add-btn:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+  }
+
+  .step-links{
+    position: relative;
+    bottom: 6em;
+  }
+
+  .prev-next-opaq:hover{
+    opacity: .3;
+  }
 }
 
-#right-wrap{
-  width: 41.1em;
-  float: right;
-  margin: 1.3em 5em 0 0;
+@media screen and (min-height: 1150px) and (max-width: 1024px){
+  #wrapper{
+    height: 70em
+  }
 }
 
-.welcome, #logout{
-  color: white;
-  text-decoration: none;
-  font-family: dynalight;
-  display: inline-block;
-}
-
-#name{
-  font-size: 1.5em;
-}
-
-#logout{
-  font-size: 1em;
-}
-
-#cart{
-  margin: 0 0 0 16.5em;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-#cart:hover{
-  opacity: .3;
-}
-
-#logout:hover{
-  opacity: .3;
-}
-
-#background{
-  width: 39.5em;
-  height: 63em;
-  margin-top: .2em;
-  background-color: black;
-  opacity: .4;
-  border-radius: .5em;
-}
-
-section{
-  position: absolute;
-  top: 3em;
-  right: 5.5em;
-  width: 40em;
-  padding: 1em 0 0 0;
-}
-
-.flower-wrap{
-  display: inline-block;
-  width: 150px;
-  margin-bottom: 2em;
-  height: 10em;
-  font-style: italic;
-  font-family:dynalight;
-  text-align: center;
-  color: white;
-}
-
-.flower-pic{
-  width: 128px;
-  height: 96px;
-  border-radius: .5em;
-}
-
-.flower-pic:hover{
-  opacity: .3;
-}
-
-input{
-  font-family: dynalight;
-  padding: .3em .8em;
-  border-radius: .9em;
-  font-size: 1em;
-}
-
-form{
-  margin: .5em 0 1em 0;
-}
-
-.step-links{
-  width: 40em;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  bottom: 2em;
-}
-
-.pagination, a{
-  color: white;
-  text-decoration: none;
-  font-family: dynalight;
-  font-size: 1.2em;
-}
-
-.current{
-  margin: 0 1em;
+@media screen and (min-height: 600px) and (min-width: 1024px){
+  #wrapper{
+    height: 48em;
+  }
 }

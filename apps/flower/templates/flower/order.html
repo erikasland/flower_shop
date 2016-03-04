@@ -3,22 +3,26 @@
     <head>
         {% load staticfiles %}
         <link rel='stylesheet' type='text/css' href='{% static "flower/orderstyles.css" %}'>
-        <link href='https://fonts.googleapis.com/css?family=Dynalight' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dynalight|PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Florian | elegance. perfection. passion.</title>
     </head>
     <body>
-        <header>
-            <h1 id='title'>Florian<h1>
-            <h6 id='subtitle'>elegance. perfection. passion.</h6>
-        </header>
-        <div id='right-wrap'>
-            <div id='background'></div>
-            <section>
-                {% for i in flowers %}
-                    <h2 class='flower_name'>{{i}}</h2>
-                {% endfor %}
+        <div id='wrapper'>
+            <header>
+                <h1 id='title'>Florian<h1>
+                <h6 id='subtitle'>elegance. perfection. passion.</h6>
+            </header>
+            <div id='right-wrap'>
+                <div id='background'></div>
+                <h2 id='flower-cart-title'>Flower Cart</h2>
+                <section>
+                    {% for i in flowers %}
+                        <h3 class='flower_name'>{{i}}</h3>
+                    {% endfor %}
+                </section>
                 <div id='form-wrapper'>
-                    <form action='/checkout' method='post'>
+                    <form id='form-one' action='/checkout' method='post'>
                         {% csrf_token %}
                         <input type='submit' value='Checkout'>
                     </form>
@@ -27,7 +31,7 @@
                         <input type='Submit' value='Back'>
                     </form>
                 </div>
-            </section>
+            </div>
         </div>
     </body>
 </html>

@@ -3,33 +3,36 @@
     <head>
         {% load staticfiles %}
         <link rel='stylesheet' type='text/css' href='{% static "flower/styles.css" %}'>
-        <link href='https://fonts.googleapis.com/css?family=Dynalight' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dynalight|PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
         <title>Florian | elegance. perfection. passion.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header>
-            <h1 id='title'>Florian<h1>
-            <h6 id='subtitle'>elegance. perfection. passion.</h6>
-        </header>
-        <div id='right-wrap'>
-            <div id='background'></div>
-            <section>
-                <div>
-                    <h3 id='login'>Log-in</h3>
-                    <h3 class='register'>Register</h3>
-                </div>
-                <form action='login' method='post'>
-                    {% csrf_token %}
-                    {{logform}}
-                    <input type='submit' value='Login'>
-                </form>
-                <div id='line'></div>
-                <form action='register' method='post'>
-                    {% csrf_token %}
-                    {{regform}}
-                    <input type='submit' value='Register'>
-                </form>
-            </section>
+        <div id='landing-wrapper'>
+            <header>
+                <h1 id='title'>Florian<h1>
+                <h6 id='subtitle'>elegance. perfection. passion.</h6>
+            </header>
+            <div id='right-wrap'>
+                <div id='background'></div>
+                <section>
+                    <div>
+                        <h3 id='login'>Log-in</h3>
+                        <h3 class='register'>Register</h3>
+                    </div>
+                    <form id='login-form' action='login' method='post'>
+                        {% csrf_token %}
+                        {{logform}}
+                        <input class='submit' id='login-btn' type='submit' value='LOGIN'>
+                    </form>
+                    <div id='line'></div>
+                    <form id='reg-form'action='register' method='post'>
+                        {% csrf_token %}
+                        {{regform}}
+                        <input class='submit' id='reg-btn' type='submit' value='REGISTER'>
+                    </form>
+                </section>
+            </div>
         </div>
     </body>
 </html>
