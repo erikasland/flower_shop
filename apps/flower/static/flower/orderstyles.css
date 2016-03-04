@@ -15,78 +15,270 @@ html {
   background-size: cover;
 }
 
-header{
-  padding: 1.3em 1.3em;
-  display: inline-block;
+@media screen and (min-width: 0px){
+  #wrapper{
+    width: 20em;
+    height: 30em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  header{
+    padding: 1.3em 0;
+    display: inline-block;
+    width: 100%;
+  }
+
+  #title{
+    color: white;
+    font-family: dynalight;
+    font-size: 7em;
+    text-align: center;
+  }
+
+  #subtitle{
+    color: white;
+    font-family: dynalight;
+    font-size: 1.5em;
+    margin-left: 25%;
+    position: relative;
+    top: -1em;
+  }
+
+  #right-wrap{
+    width: 19em;
+    margin: 0 auto;
+    height: 18em;
+    overflow-y: auto;
+  }
+
+  #background{
+    width: 19em;
+    height: 92%;
+    background-color: black;
+    opacity: .4;
+    border-radius: .5em;
+    border: white solid 1px;
+    position: absolute;
+    top: 1em;
+    z-index: -1;
+  }
+
+  #flower-cart-title{
+    font-family: dynalight;
+    font-size: 2em;
+    position: absolute;
+    left: 6%;
+    top: 38%;
+  }
+
+  section{
+    position: absolute;
+    left: 1em;
+    bottom: 6em;
+    width: 18em;
+    height: 10em;
+    overflow-y: auto;
+    text-align: center;
+    border: white solid .1em;
+  }
+
+  h2{
+    font-family: dynalight;
+    font-size: 1em;
+    font-style: italic;
+  }
+
+  h3{
+    font-family: 'PT Sans Narrow';
+    font-size: 1em;
+    font-style: italic;
+    color: white;
+  }
+
+  form{
+    display: inline-block; vertical-align: top;
+    margin: 1.5em 0 0 2em;
+  }
+
+  #form-wrapper{
+    width: 18em;
+    position: absolute;
+    bottom: 3em;
+    left: 1em;
+  }
+
+  input{
+    display: block;
+    height: 1.5em;
+    width: 6em;
+    font-size: 1em;
+    margin-bottom: .5em;
+    border: solid white .1em;
+    color: white;
+    background: transparent;
+  }
+
+  label{
+    color: white
+  }
 }
 
-#title{
-  color: white;
-  font-family: dynalight;
-  font-size: 10em;
+
+@media screen and (min-width: 481px){
+  #wrapper{
+    width: 29em;
+  }
+
+  #title{
+    font-size: 8em;
+  }
+
+  #subtitle{
+    font-size: 1.7em;
+    margin-left: 33%;
+  }
+
+  #right-wrap{
+    width: 29em;
+  }
+
+  #background{
+    width: 29em;
+  }
+
+  #flower-cart-title{
+    left: 3%;
+  }
+
+  section{
+    width: 27em;
+  }
+
+  form{
+    display: inline-block; vertical-align: top;
+    margin: 0 0 0 2em;
+  }
+
+  #form-wrapper{
+    left: 1.5em;
+    width: 94%;
+    bottom: 2.5em;
+  }
+
+  input{
+    width: 10em;
+  }
+
+  label{
+    color: white
+  }
 }
 
-#subtitle{
-  color: white;
-  font-family: dynalight;
-  font-size: 2em;
-  margin-left: 3.5em;
-  position: relative;
-  top: -1em;
+
+@media screen and (min-width: 1024px){
+  #wrapper{
+    width: 60em;
+    height: 34em;
+  }
+
+  #title{
+    font-size: 12em;
+  }
+
+  #subtitle{
+    font-size: 2.3em;
+    margin-left: 41%;
+  }
+
+  #right-wrap{
+    width: 60em;
+  }
+
+  #background{
+    width: 60em;
+    height: 33em;
+  }
+
+  #flower-cart-title{
+    left: 1%;
+    top: 53%;
+  }
+
+  section{
+    width: 58em;
+    bottom: 8.5%;
+  }
+
+  #form-one{
+    margin: 0 11% 0 0;
+  }
+
+  #form-wrapper{
+    left: 29%;
+    width: 25.1em;
+    bottom: .3em;
+  }
+
+  input{
+    width: 10em;
+  }
+
+  input:hover{
+    background-color: white;
+    color: black;
+  }
+
+  label{
+    color: white
+  }
 }
 
-#right-wrap{
-  width: 41.1em;
-  float: right;
-  margin: 30em 5em 0 0;
+@media screen and (max-height: 450px) and (min-width: 482px){
+  #wrapper{
+    transform: none;
+    position: static;
+    margin: 0 auto;
+  }
+
+  #background{
+    height: 29em;
+  }
+
+  #right-wrap{
+    height: 16.5em;
+  }
+
+  #flower-cart-title{
+    position: static;
+    margin-left: 2%;
+  }
+
+  section{
+    position: static;
+    margin: 0 auto;
+  }
+
+  form{
+    margin: 0 0 0 0;
+  }
+
+  #form-wrapper{
+    height: 2em;
+    margin: 1em auto 0 auto;
+    position: static;
+    width: 25em;
+  }
+
+  #form-one{
+    margin-right: 17%;
+  }
 }
 
-#background{
-  width: 39.5em;
-  height: 23em;
-  background-color: black;
-  opacity: .4;
-  border-radius: .5em;
-  border: white solid 1px;
-}
-
-section{
-  position: relative;
-  left: .5em;
-  bottom: 22.5em;
-  width: 38.5em;
-  height: 22em;
-  overflow-y: auto;
-}
-
-h2{
-  font-family: dynalight;
-}
-
-h3{
-  display: inline-block;
-  font-family: dynalight;
-  color: white;
-  font-size: 2em;
-}
-
-#form-wrapper{
-  width: 37em;
-}
-
-form{
-  display: inline-block; vertical-align: top;
-  margin: 1.5em 0 0 2em;
-}
-
-input{
-  display: block;
-  height: 1.5em;
-  width: 6em;
-  font-size: 1em;
-  margin-bottom: .5em;
-}
-
-label{
-  color: white
+@media screen and (max-height: 440px) and (max-width: 481){
+  #form-wrapper{
+    width: 15em;
+  }
 }
