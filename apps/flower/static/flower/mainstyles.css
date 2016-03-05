@@ -230,8 +230,8 @@ html {
   }
 
   #right-wrap{
-    width: 63.1em;
-    height: 32.5em;
+    width: 63em;
+    height: 34em;
   }
 
   #name{
@@ -240,13 +240,14 @@ html {
   }
 
   #background{
-    width: 63.1em;
-    height: 46em;
+    width: 63em;
+    height: 49em;
   }
 
   section{
-    width: 100%;
+    width: 98%;
     height: 31em;
+    padding-left: .5%;
   }
 
   .flower-wrap{
@@ -254,6 +255,10 @@ html {
     margin: 0 .6% .5% .6%;
     font-size: .5em;
     height: 36%;
+  }
+
+  h2{
+    font-size: 1.8em;
   }
 
   .flower-pics{
@@ -268,7 +273,7 @@ html {
 
   .step-links{
     position: relative;
-    bottom: 6em;
+    bottom: 4em;
   }
 
   .prev-next-opaq:hover{
@@ -284,6 +289,6 @@ html {
 
 @media screen and (min-height: 600px) and (min-width: 1024px){
   #wrapper{
-    height: 48em;
+    height: 50em;
   }
 }
