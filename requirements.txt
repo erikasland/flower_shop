@@ -32,7 +32,7 @@ html5lib==0.999
 httplib2==0.8
 itsdangerous==0.24
 lockfile==0.8
-lxml==3.3.3
+lxml==4.9.1
 mutagen==1.22
 mysql-connector-python==2.0.4
 oauthlib==0.6.1
